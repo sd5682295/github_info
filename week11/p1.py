@@ -17,7 +17,7 @@ class qsort(object):
 def str_to_int(k1,k2):
     k1 = int(k1)
     k2 = str(k2)
-    s = ((100-k1)*(26**11))
+    s = (k1*(26**11))
     c = 10
     for i in k2:
         s += (ord(i)*(26**c))
@@ -26,18 +26,19 @@ def str_to_int(k1,k2):
 
 
 if __name__ == '__main__':
-    # a = [3, 2, 1, 5, 4, 8, 7, 10, 9]
-    # b = qsort(a)
-    # b.mysort(0, 9)
-    # print(b.data)
-    data = [(50,'sun'),(50,'zhang'),(80,'sun'),(90,'zhang'),(90,'sun')]
-    s = []
-
-    for k1,k2 in data:
-        a = str_to_int(k1,k2)
-        s.append(a)
+    m = int(input())
+    s =[]
+    d = dict()
+    for _ in range(m):
+        k1,k2,k3 = input().split(' ')
+        k3 = int(k3)
+        k1 = str(k1)
+        index = (str_to_int(k3,k1))
+        s.append(index)
+        d[index] = '{} {} {}'.format(str(k1),str(k2),str(k3))
     ss = qsort(s)
-    ss.mysort(0,5)
-    print(ss.data)
+    ss.mysort(0,m)
+    for i in ss.data:
+        print(d[i])
 
 
