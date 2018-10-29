@@ -14,13 +14,6 @@ class qsort(object):
         self.mysort(start_index, store_index - 1)
         self.mysort(store_index, end_index)
 
-    def __repr__(self):
-        return self.data
-
-class score(object):
-    def __init__(self):
-
-
 
 if __name__ == '__main__':
     a = [3, 2, 1, 5, 4, 8, 7, 10, 9]
