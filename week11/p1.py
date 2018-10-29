@@ -17,10 +17,10 @@ class qsort(object):
 def str_to_int(k1,k2):
     k1 = int(k1)
     k2 = str(k2)
-    s = (k1*(26**11))
+    s = (k1*(27**11))
     c = 10
     for i in k2:
-        s += (ord(i)*(26**c))
+        s += ((ord(i)-96)*(27**c))
         c -= 1
     return s
 
@@ -35,7 +35,7 @@ if __name__ == '__main__':
         k1 = str(k1)
         index = (str_to_int(k3,k1))
         s.append(index)
-        d[index] = '{} {} {}'.format(str(k1),str(k2),str(k3))
+        d[index] = '{} {} {}'.format(str(k1),int(k2),int(k3))
     ss = qsort(s)
     ss.mysort(0,m)
     for i in ss.data:
