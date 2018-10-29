@@ -1,6 +1,11 @@
 class qsort(object):
-    def __init__(self, other_lst):
-        self.data = other_lst
+    def __init__(self):
+        self.data = list()
+
+    def add(self,k1,k2):
+        k1 = int(k1)
+        k2 = int(k2)
+        self.data.extend(list(range(k1,k2+1)))
 
     def mysort(self, start_index, end_index):
         if start_index >= end_index:
@@ -14,15 +19,23 @@ class qsort(object):
         self.mysort(start_index, store_index - 1)
         self.mysort(store_index, end_index)
 
-def str_to_int(k1,k2):
-    k1 = int(k1)
-    k2 = str(k2)
-    s = (k1*(27**11))
-    c = 10
-    for i in k2:
-        s += ((ord(i)-96)*(27**c))
-        c -= 1
-    return s
+    def out_put(self):
+        self.mysort(0,len(self.data))
+
+        start_point = self.data[0]
+
+        end_point = self.data[-1]
+        index_c = (start_point-0)
+        p_list = list(range(start_point,end_point+1))
+        for i in self.data:
+            p_list[i-index_c] = False
+        for i in p_list:
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
